@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>React Counter</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="div1"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    function Counter() {
+      const [count, setCount] = useState(2);
+
+      return (
+        <div>
+          <p>{count}</p>
+          <button onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("div1"));
+    root.render(<Counter />);
+  </script>
+</body>
+</html>
