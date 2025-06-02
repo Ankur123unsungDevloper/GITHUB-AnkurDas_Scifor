@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Logo from "../../assets/logo.png";
 import { IoMdSearch } from "react-icons/io";
-import { FaCartShopping, FaCaretDown } from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa";
+import { FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
 
 const MAIN_MENU = [
