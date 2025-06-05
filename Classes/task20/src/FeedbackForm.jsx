@@ -29,7 +29,7 @@ const FeedbackForm = () => {
 
       if (response.ok) {
         setMessage('✅ Feedback submitted successfully!');
-        setMessageColor('green');
+        setMessageColor('oklch(69.6% 0.17 162.48)');
         setFormData({ fullName: '', email: '', rating: '' });
       } else {
         throw new Error('Submission failed');
