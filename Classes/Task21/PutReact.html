@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Post with PUT</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    function UpdatePost() {
+      const [title, setTitle] = React.useState("");
+      const [body, setBody] = React.useState("");
+      const [message, setMessage] = React.useState("");
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+
+        fetch("https://jsonplaceholder.typicode.com/posts/1", {
+          method: "PUT",
+          headers: {
+            "Content-type": "application/json; charset=UTF-8"
+          },
+          body: JSON.stringify({
+            id: 1,
+            title: title,
+            body: body,
+            userId: 1
+          })
+        })
+        .then(response => response.json())
+        .then(json => {
+          console.log(json);
+          setMessage("Post updated successfully!");
+        })
+        .catch(err => {
+          console.error(err);
+          setMessage("Failed to update post.");
+        });
+      };
+
+      return (
+        <div>
+          <h2>Update Post (PUT)</h2>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label>Title:</label><br />
+              <input 
+                type="text" 
+                value={title} 
+                onChange={(e) => setTitle(e.target.value)} 
+                required 
+              />
+            </div>
+            <br />
+            <div>
+              <label>Body:</label><br />
+              <textarea 
+                value={body} 
+                onChange={(e) => setBody(e.target.value)} 
+                required 
+              />
+            </div>
+            <br />
+            <button type="submit">Update Post</button>
+          </form>
+          <br />
+          {message && <p>{message}</p>}
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<UpdatePost />);
+  </script>
+</body>
+</html>
