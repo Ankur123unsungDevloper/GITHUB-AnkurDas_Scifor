@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Print 1 to 100</title>
+</head>
+<body>
+  <h2>Numbers from 1 to 100:</h2>
+  <div id="output"></div>
+
+  <script>
+    let i = 1;
+    let result = "";
+
+    while (i <= 100) {
+      result += i + "<br>";
+      i++;
+    }
+
+    document.getElementById("output").innerHTML = result;
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="form-wrapper">
+    <form class="registration-form" autocomplete="off">
+      <h1>Register</h1>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Create a password">
+      </div>
+      <div class="form-group">
+        <span class="label-title">Gender</span>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="gender" value="male" required>
+            Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" required>
+            Female
+          </label>
+          <label>
+            <input type="radio" name="gender" value="other" required>
+            Other
+          </label>
+        </div>
+      </div>
+      <div class="form-group">
+        <span class="label-title">Skills</span>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="skills" value="HTML">
+            HTML
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="CSS">
+            CSS
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="JavaScript">
+            JavaScript
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="Python">
+            Python
+          </label>
+          <label>
+            <input type="checkbox" name="skills" value="React">
+            React
+          </label>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit">Register</button>
+        <button type="reset" class="reset-btn">Reset</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

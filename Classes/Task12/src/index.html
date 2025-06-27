@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React Example</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="div1"></div>
+
+  <script type="text/babel">
+    // Child component
+    const B = (props) => {
+      return (
+        <div>
+          <h3>Data: {props.data}</h3>
+        </div>
+      );
+    };
+
+    // Parent component
+    const A = () => {
+      const name = "Ankur";
+      const lname = "Das";
+      return (
+        <div>
+          <h1>Parent Component</h1>
+          <B data={`${name} ${lname}`} />
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById("div1"));
+    root.render(<A />);
+  </script>
+</body>
+</html>

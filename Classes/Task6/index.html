@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+</head>
+<body>
+  <h1>Calculator</h1>
+  <p id="result"></p>
+
+  <script>
+    const num1 = 10;
+    const num2 = 5;
+
+    const addition = num1 + num2;
+    const subtraction = num1 - num2;
+    const multiplication = num1 * num2;
+    const division = num2 !== 0 ? num1 / num2 : 'Cannot divide by zero';
+
+    document.getElementById('result').innerText = 
+      `Addition: ${addition}, Subtraction: ${subtraction}, Multiplication: ${multiplication}, Division: ${division}`;
+  </script>
+</body>
+</html>

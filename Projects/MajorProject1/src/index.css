@@ -1,0 +1,562 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #ffffff;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+html {
+  overflow-x: hidden !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+section {
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background-color: none;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heading h1 {
+  width: fit-content;
+  text-align: center;
+  margin: 20px auto 30px !important;
+}
+
+.images-container {
+  display: flex;
+}
+
+/*   ---Home Slider---   */
+
+.homeSlide {
+  display: flex;
+  justify-content: center;
+  background-color: #f6f9fc;
+  padding-bottom: 0 !important;
+}
+
+/* .signup-logo-section {
+  background-color: #0f3460; /* purple background */
+  /* color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-logo-icon {
+  font-size: 80px; /* bigger icon */
+  /* color: white;
+  margin-bottom: 10px;
+}
+
+.Sign_logo {
+  font-size: 40px; /* bigger text */
+  /* font-weight: bold;
+  color: white;
+}  */
+
+/* --- Profile Dashboard Page --- */
+
+.profile-dashboard {
+  padding: 60px 20px;
+  background: #f6f9fc;
+  min-height: 100vh;
+}
+
+.profile-header {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-header h2 {
+  font-size: 24px;
+  color: #0f3460;
+}
+
+.logout-btn {
+  background-color: #0f3460;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #124078;
+}
+
+.profile-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-icon {
+  font-size: 30px;
+}
+
+.profile-info h3 {
+  font-size: 18px;
+  color: #0f3460;
+  margin-bottom: 5px;
+}
+
+.profile-info p {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* --- SignUp Page --- */
+
+.signup-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background: #f6f9fc;
+}
+
+/* Logo section */
+.signup-logo-section {
+  background-color: #0f3460;
+  color: white;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.signup-logo-section ion-icon.signup-icon {
+  font-size: 100px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.signup-logo {
+  font-size: 100px;
+  font-weight: 700;
+}
+
+/* Form section */
+.signup-form-section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form-box {
+  background-color: white;
+  width: 90%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.signup-form-box h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f3460;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.signup-form-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.signup-form-box a {
+  font-size: 14px;
+  color: #0f3460;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.signup-form-box a:hover {
+  text-decoration: underline;
+}
+
+.signup-form-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0f3460;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.signup-form-box button:hover {
+  background-color: #124078;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .signup-container {
+    flex-direction: column;
+  }
+
+  .signup-logo-section,
+  .signup-form-section {
+    width: 100%;
+  }
+
+  .signup-logo-section ion-icon.signup-icon {
+    font-size: 70px;
+  }
+}
+
+/*   ---Shop Pages---   */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.filter-bar-contianer .row {
+  flex-wrap: wrap-reverse !important;
+}
+
+@media (max-width: 767px) {
+  .filter-bar .row {
+    gap: 20px;
+  }
+}
+
+.not-found {
+  margin: 40px auto 20px;
+  width: fit-content;
+}
+
+/* ===== Cart Layout ===== */
+
+.cart-left-section {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.cart-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #0f3460;
+}
+
+.cart-product-box {
+  border-top: 1px solid #e1e1e1;
+  padding: 15px 0;
+}
+
+.cart-product-img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-price span {
+  color: #0f3460;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.product-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.action-btn {
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.remove-btn {
+  margin-left: auto;
+  background: none;
+  color: #d00;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Summary Box */
+.cart-summary-box {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 60px;
+}
+
+.cart-summary-box h4 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.cart-summary-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f3460;
+  margin-bottom: 20px;
+}
+
+.checkout-now-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0f3460;
+  border: 1px solid #0f3460;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.checkout-now-btn:hover {
+  background-color: #124078;
+}
+
+/* --- Checkout Page (Styled like Amazon) --- */
+
+.checkout-page {
+  background: #f6f9fc;
+  padding: 40px 0;
+}
+
+.checkout-box {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f3460;
+  border-bottom: 1px solid rgba(3, 0, 71, 0.1);
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+
+.checkout-box p {
+  margin: 0;
+  font-size: 15px;
+  color: #333;
+}
+
+.checkout-box a {
+  font-size: 14px;
+  color: #007185;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.payment-section form label {
+  font-size: 15px;
+  color: #222;
+}
+
+.payment-section h6 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #0f3460;
+}
+
+/* Summary Card */
+.cart-total {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.summary-item,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.summary-total {
+  border-top: 1px solid rgba(3, 0, 71, 0.1);
+  padding-top: 10px;
+  margin-top: 15px;
+}
+
+.cart-total h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f3460;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0f3460;
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid #0b2647;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #124078;
+}
+
+/* --- Payment Page --- */
+.payment-page {
+  background: #f6f9fc;
+  padding: 40px 0;
+}
+
+.payment-box {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.prime-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.prime-box img {
+  width: 70px;
+  height: auto;
+}
+
+.order-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.summary-item,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-total h3 {
+  color: #0f3460;
+}
+
+.checkout-btn {
+  background-color: #0f3460;
+  color: #fff;
+  font-weight: 600;
+  border: 1px solid #0b2647;
+  border-radius: 8px;
+}
+
+.checkout-btn:hover {
+  background-color: #124078;
+}

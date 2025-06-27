@@ -1,0 +1,12 @@
+/* Custom navbar brand font */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+/* Optional: add spacing between nav links */
+.navbar-nav .nav-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}

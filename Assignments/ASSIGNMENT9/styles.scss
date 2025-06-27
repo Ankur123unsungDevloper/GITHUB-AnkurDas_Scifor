@@ -1,0 +1,80 @@
+// styles.scss
+
+// Variables
+$primary-color: #4CAF50;
+$secondary-color: #f4f4f4;
+$text-color: #333;
+$header-bg: #333;
+$header-text-color: #fff;
+$footer-bg: #4CAF50;
+$footer-text-color: #fff;
+
+// Global Styles
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: $secondary-color;
+    color: $text-color;
+    margin: 0;
+    padding: 0;
+}
+
+// Header Styles
+header {
+    background: $header-bg;
+    color: $header-text-color;
+    padding: 20px 0;
+    text-align: center;
+
+    nav {
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                display: inline;
+                margin: 0 15px;
+
+                a {
+                    color: $header-text-color;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Main Content Styles
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+
+    section {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+
+        h2 {
+            color: $primary-color;
+        }
+    }
+}
+
+// Footer Styles
+footer {
+    background: $footer-bg;
+    color: $footer-text-color;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

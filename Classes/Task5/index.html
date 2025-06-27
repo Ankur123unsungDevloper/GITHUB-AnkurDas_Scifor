@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boolean Values</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Boolean Values in JavaScript</h1>
+  <p id="output"></p>
+
+  <script>
+    // Boolean values
+    let isTrue = true;
+    let isFalse = false;
+
+    // Comparisons
+    let comparison = (5 > 3); // true
+
+    // Logical operations
+    let logical = (true && false); // false
+
+    // Display results
+    document.getElementById('output').innerText = 
+      `isTrue: ${isTrue}, isFalse: ${isFalse}, comparison (5 > 3): ${comparison}, logical (true && false): ${logical}`;
+  </script>
+</body>
+</html>

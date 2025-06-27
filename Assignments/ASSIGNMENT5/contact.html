@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - MySite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">MySite</a>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you! Whether you have questions, feedback, or want to discuss a project, feel free to reach out.</p>
+    <section>
+      <h2>Get in Touch</h2>
+      <address>
+        <strong>MySite Headquarters</strong><br />
+        123 Business Road<br />
+        Cityville, ST 12345<br />
+        Phone: (123) 456-7890<br />
+        Email: <a href="mailto:info@mysite.com">info@mysite.com</a>
+      </address>
+    </section>
+    <section>
+      <h2>Contact Form</h2>
+      <form action="#" method="post">
+        <label for="name">Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="email">Email:</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <label for="message">Message:</label><br />
+        <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

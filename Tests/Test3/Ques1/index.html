@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="username">Username (min 4 characters):</label>
+        <input type="text" id="username" name="username" minlength="4" required>
+        <div id="usernameError" class="error"></div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password (min 8 characters):</label>
+        <input type="password" id="password" name="password" minlength="8" required>
+        <div id="passwordError" class="error"></div>
+      </div>
+      <input type="submit" value="Login">
+    </form>
+    <div id="successMessage" class="success"></div>
+  </div>
+
+  <script>
+    function validateForm() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      let valid = true;
+
+      document.getElementById('usernameError').innerText = '';
+      document.getElementById('passwordError').innerText = '';
+      document.getElementById('successMessage').innerText = '';
+
+      if (username.length < 4) {
+        document.getElementById('usernameError').innerText = 'Username must be at least 4 characters long.';
+        valid = false;
+      }
+
+      if (password.length < 8) {
+        document.getElementById('passwordError').innerText = 'Password must be at least 8 characters long.';
+        valid = false;
+      }
+
+      if (valid) {
+        document.getElementById('successMessage').innerText = 'Login successful!';
+      }
+
+      return valid;
+    }
+  </script>
+
+</body>
+</html>

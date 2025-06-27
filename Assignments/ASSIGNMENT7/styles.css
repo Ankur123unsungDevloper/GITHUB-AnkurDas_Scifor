@@ -1,0 +1,17 @@
+/* Custom pagination styles */
+.pagination {
+  margin-top: 20px;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff; /* Bootstrap primary color */
+  border-color: #007bff; /* Bootstrap primary color */
+}
+
+.page-link {
+  color: #007bff; /* Bootstrap primary color */
+}
+
+.page-link:hover {
+  color: #0056b3; /* Darker shade for hover effect */
+}
