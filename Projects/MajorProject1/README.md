@@ -1,48 +1,38 @@
-# Maltimart Ecommerce
+# 🛍️ Multimart - React eCommerce App
 
 ## 📌 Live Demo
-https://multimart-ecommerce.onrender.com
+[https://multimart-e-commerce-app.netlify.app/](https://multimart-e-commerce-app.netlify.app/)
 
 ## 😎 Features
 
-- Beauty UI similar to ecommerce website
-- Fully responsive and mobile friendly
-- User can add items to cart
-- User can view details of an item
-- User can show total price in cart
-- In Item page user can add quantity of item to cart instead of click add more and more 
+- Beautiful and responsive UI similar to modern eCommerce websites
+- Fully responsive and mobile-friendly
+- Users can browse and view product details
+- Add items to cart with adjustable quantity
+- View total cart price dynamically
+- Seamless navigation using React Router
 
-## 🚀 What technologies were used?
+## 🚀 Technologies Used
 
-- react.js (create-react-app)
-- react-dom-router
-- react-bootstrap
-- state management using Redux Toolkit
+- React.js (Create React App)
+- React Router DOM
+- React Bootstrap (or Tailwind/CSS)
+- State Management: Redux Toolkit
+- JavaScript (ES6+), HTML5 & CSS3
 
-## How can you clone and tweak this project?
+## 🛠️ Getting Started
 
-From your command line, first clone this repo:
+### Clone and Run Locally
 
-```
+```bash
 # Clone this repository
-$ https://github.com/0mar-helal/multimart-react-ecommerce.git
+git clone https://github.com/Ankur123unsungDevloper/MajorProject1.git
 
-# Go into the repository
-$ cd multimart-react-ecommerce
+# Navigate into the project folder
+cd multimart-react-ecommerce
 
-# Remove current origin repository
-$ git remote remove origin
-
-```
-
-Then you can install the dependencies using NPM:
-
-```
 # Install dependencies
-$ npm install
+npm install
 
 # Start development server
-$ npm start
-```
-👨‍💻 Happy coding!
----
+npm start
