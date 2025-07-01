@@ -1,0 +1,208 @@
+/* General */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* Navbar Layout */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 24px; /* reduced from 40px */
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  gap: 20px; /* NEW: controls spacing between left, center, right */
+}
+
+.nav-left {
+  min-width: 160px;
+}
+
+.nav-center {
+  flex: 1;
+  justify-content: center;
+  display: flex;
+}
+
+.nav-right {
+  min-width: 160px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-logo {
+  height: 24px;
+  margin-right: 10px;
+}
+
+.nav-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+/* Center */
+.nav-center {
+  display: flex;
+  gap: 20px;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.nav-center .active {
+  color: #6200EE;
+  border-bottom: 2px solid #6200EE;
+}
+
+/* Right */
+.nav-right .edit-btn {
+  background-color: #6200EE;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-right .edit-btn:hover {
+  background-color: #4500bb;
+}
+
+/* Hero Section */
+.hero {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.primary-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #007BFF;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.feature-card {
+  text-align: center;
+  max-width: 300px;
+  margin: 20px;
+}
+
+.feature-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f0f0f0;
+}
+
+.about-text {
+  flex: 1;
+  padding: 20px;
+  max-width: 500px;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+/* Logos Carousel */
+.logos-carousel {
+  overflow-x: auto;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.logo {
+  max-height: 50px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  padding: 60px 20px;
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.testimonial {
+  max-width: 300px;
+  text-align: center;
+}
+
+.testimonial img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* CTA Section */
+.cta {
+  background-color: #007BFF;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
