@@ -9,6 +9,7 @@ body {
 /* Navbar Layout */
 .nav {
   display: flex;
+  flex: content;
   align-items: center;
   justify-content: space-between;
   height: 70px;
@@ -51,25 +52,39 @@ body {
 /* Center */
 .nav-center {
   display: flex;
-  gap: 20px;
-  font-size: 1.2rem;
-  color: black;
+  gap: 30px;
+  line-height: 0;
 }
 
-.nav-center .active {
+.nav-center .icon {
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.nav-center .icon:hover {
+  color: #6200EE;
+}
+
+.nav-center .icon .active {
   color: #6200EE;
   border-bottom: 2px solid #6200EE;
 }
 
 /* Right */
 .nav-right .edit-btn {
-  background-color: #6200EE;
+  background-color: #3910ed;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 999px;
+  position: relative;
+  right: 60px;
+  height: 42px;
+  padding: 0px 24px;
+  border-radius: 81px;
   font-weight: 500;
+  font-size: 16px;
   cursor: pointer;
+  align-items: center;
+  text-align: center;
   transition: background 0.3s ease;
 }
 

@@ -12,9 +12,9 @@ function Navbar() {
       </div>
 
       <div className="nav-center">
-        <RiComputerLine />
-        <IoTabletPortraitOutline />
-        <LiaMobileSolid />
+        <RiComputerLine className="icon" />
+        <IoTabletPortraitOutline className="icon" />
+        <LiaMobileSolid className="icon" />
       </div>
 
       <div className="nav-right">
