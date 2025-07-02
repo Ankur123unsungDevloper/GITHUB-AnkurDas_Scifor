@@ -34,9 +34,12 @@ body {
 }
 
 .nav-right {
-  min-width: 160px;
+  min-width: 200px;
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  right: 50px;
+  gap: 8px;
 }
 
 .nav-logo {
@@ -52,44 +55,95 @@ body {
 /* Center */
 .nav-center {
   display: flex;
-  gap: 30px;
+  gap: 16px;
   line-height: 0;
 }
 
-.nav-center .icon {
-  font-size: 32px;
+/* Icon buttons */
+.icon-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  font-size: 30px;
   cursor: pointer;
+  color: #333;
+  transition: color 0.2s ease;
+  height: 77px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation-duration: 500ms;
 }
 
-.nav-center .icon:hover {
-  color: #6200EE;
+/* Purple highlight on hover */
+.icon-btn:hover {
+  color: rgba(57,16,237,.7);
 }
 
-.nav-center .icon .active {
-  color: #6200EE;
-  border-bottom: 2px solid #6200EE;
+/* Active state */
+.icon-btn.active {
+  color: #3910ed;
+}
+
+/* The underline on active — spans full navbar height */
+.icon-btn.active::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #3910ed;
+  border-radius: 1px;
 }
 
 /* Right */
-.nav-right .edit-btn {
-  background-color: #3910ed;
-  color: white;
-  border: none;
-  position: relative;
-  right: 60px;
-  height: 42px;
-  padding: 0px 24px;
-  border-radius: 81px;
-  font-weight: 500;
-  font-size: 16px;
-  cursor: pointer;
-  align-items: center;
-  text-align: center;
-  transition: background 0.3s ease;
+/* Remove link underline */
+.nav-right {
+  text-decoration: none;
+  display: inline-block;
 }
 
-.nav-right .edit-btn:hover {
-  background-color: #4500bb;
+/* Button styling */
+.edit-btn {
+  background-color: #3a0eff;
+  color: white;
+  border: none;
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: padding-left 0.3s ease;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Remove underline from text if inside span */
+.edit-text {
+  text-decoration: none;
+}
+
+/* Arrow icon transition */
+.arrow-icon {
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-size: 17px;
+}
+
+/* Hover effects */
+.edit-btn:hover {
+  padding-left: 30px;
+}
+
+.edit-btn:hover .arrow-icon {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Hero Section */
