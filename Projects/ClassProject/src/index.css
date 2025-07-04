@@ -39,7 +39,6 @@ body {
   justify-content: flex-end;
   position: relative;
   right: 50px;
-  gap: 8px;
 }
 
 .nav-logo {
@@ -98,34 +97,21 @@ body {
 }
 
 /* Right */
-/* Remove link underline */
-.nav-right {
-  text-decoration: none;
-  display: inline-block;
-}
-
-/* Button styling */
 .edit-btn {
   background-color: #3a0eff;
   color: white;
   border: none;
   height: 42px;
   padding: 0 24px;
-  border-radius: 999px;
+  border-radius: 81px;
   font-weight: 500;
   font-size: 15px;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
   transition: padding-left 0.3s ease;
   overflow: hidden;
   white-space: nowrap;
-}
-
-/* Remove underline from text if inside span */
-.edit-text {
-  text-decoration: none;
 }
 
 /* Arrow icon transition */
@@ -133,7 +119,6 @@ body {
   opacity: 0;
   transform: translateX(-6px);
   transition: opacity 0.3s ease, transform 0.3s ease;
-  font-size: 17px;
 }
 
 /* Hover effects */
@@ -148,35 +133,33 @@ body {
 
 /* Hero Section */
 .hero {
-  background-size: cover;
-  background-position: center;
-  padding: 100px 20px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Fullscreen video background */
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Overlay content */
+.hero-content {
+  position: relative;
+  z-index: 1;
   text-align: center;
-  color: white;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-}
-
-.primary-btn {
-  padding: 0.75rem 1.5rem;
-  background-color: #007BFF;
-  border: none;
-  color: white;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.primary-btn:hover {
-  background-color: #0056b3;
+  color: #3E87FB;
+  padding-top: 30vh;
+  font-family: sora, sora, sans-serif;
+  font-size: 40px;
+  letter-spacing: 0.2em;
 }
 
 /* Features Section */

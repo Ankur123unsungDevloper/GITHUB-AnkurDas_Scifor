@@ -1,10 +1,18 @@
+import React from 'react';
+
 function Hero() {
   return (
-    <section className="hero" style={{ backgroundImage: 'url(../assets/hero-bg.mp4)' }}>
+    <section className="hero">
+      {/* Video background */}
+      <video className="hero-video" autoPlay muted loop playsInline>
+        <source src="/assets/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Hero content overlay */}
       <div className="hero-content">
-        <h1>Your Software, Powered Better</h1>
-        <p>We build tools that transform businesses.</p>
-        <button className="primary-btn">Get Started</button>
+        <h1>
+          <span>KEENECT-SOFTWARE</span>
+        </h1>
       </div>
     </section>
   );

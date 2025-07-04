@@ -10,7 +10,9 @@ function Navbar() {
   return (
     <header className="nav">
       <div className="nav-left">
-        <span className="nav-title"><strong>WIX </strong>STUDIO</span>
+        <span className="nav-title">
+          <img src="/assets/logo.png" alt="WIX STUDIO" className="nav-logo" />
+          <strong>WIX </strong>STUDIO</span>
       </div>
 
       <div className="nav-center">
