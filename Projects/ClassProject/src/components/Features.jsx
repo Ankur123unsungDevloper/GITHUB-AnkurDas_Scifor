@@ -1,21 +1,46 @@
-const features = [
-  { icon: '💡', title: 'Innovation', desc: 'We bring new ideas to life.' },
-  { icon: '🔒', title: 'Security', desc: 'Top-notch protection for your data.' },
-  { icon: '⚙️', title: 'Customization', desc: 'Tailored solutions just for you.' }
-];
+import React, { useEffect, useRef, useState } from 'react';
+import { FaArrowRight } from 'react-icons/fa';
 
-function Features() {
+function CardShowcase() {
+  const sectionRef = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.4 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="features">
-      {features.map((item, index) => (
-        <div className="feature-card" key={index}>
-          <div className="icon">{item.icon}</div>
-          <h3>{item.title}</h3>
-          <p>{item.desc}</p>
-        </div>
-      ))}
+    <section className="card-showcase" ref={sectionRef}>
+      <div className="heading">
+        <h1>Build Stronger Customer Relationships</h1>
+        <h2>
+          Simplify Interactions & Gain Valuable Insights with <br />
+          Keenect Customer Relations Management Software
+        </h2>
+
+        <button className="cta-btn">
+          TRY IT OUT NOW <FaArrowRight className="arrow-icon" />
+        </button>
+      </div>
+
+      <div className="cards-container">
+        {[...Array(15)].map((_, i) => {
+          const isBlue = [3, 5, 6, 10].includes(i); // highlight blue cards
+          return (
+            <div
+              key={i}
+              className={`card ${inView ? 'scroll-in' : ''} ${isBlue ? 'blue-card' : ''}`}
+            />
+          );
+        })}
+      </div>
     </section>
   );
 }
 
-export default Features;
+export default CardShowcase;
