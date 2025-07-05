@@ -28,17 +28,7 @@ function CardShowcase() {
         </button>
       </div>
 
-      <div className="cards-container">
-        {[...Array(15)].map((_, i) => {
-          const isBlue = [3, 5, 6, 10].includes(i); // highlight blue cards
-          return (
-            <div
-              key={i}
-              className={`card ${inView ? 'scroll-in' : ''} ${isBlue ? 'blue-card' : ''}`}
-            />
-          );
-        })}
-      </div>
+      
     </section>
   );
 }

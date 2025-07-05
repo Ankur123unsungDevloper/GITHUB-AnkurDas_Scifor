@@ -1,6 +1,11 @@
-import React from 'react';
+import React from "react";
 
 function Hero() {
+  window.addEventListener("scroll", function () {
+    const heroSection = document.querySelector(".hero");
+    heroSection.classList.toggle("sticky", window.scrollY > 0);
+  });
+
   return (
     <section className="hero">
       {/* Video background */}

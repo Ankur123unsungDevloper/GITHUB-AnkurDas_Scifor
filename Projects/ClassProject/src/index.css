@@ -12,7 +12,7 @@ body {
   flex: content;
   align-items: center;
   justify-content: space-between;
-  height: 70px;
+  height: 76px;
   padding: 0 24px; /* reduced from 40px */
   background-color: white;
   border-bottom: 1px solid #e0e0e0;
@@ -143,6 +143,10 @@ body {
   justify-content: center;
   overflow: hidden;
   transition: 1s;
+}
+
+.hero.sticky {
+  height: 76px;
 }
 
 /* Fullscreen video background */
