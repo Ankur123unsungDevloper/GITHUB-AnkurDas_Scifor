@@ -1,9 +1,12 @@
 /* General */
-body {
+* {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  background-color: #f8f9fa;
+}
+
+body {
+  background-color: #121212;
+  min-height: 1000px;
 }
 
 /* Navbar Layout */
@@ -13,14 +16,13 @@ body {
   align-items: center;
   justify-content: space-between;
   height: 76px;
-  padding: 0 24px; /* reduced from 40px */
+  padding: 0 24px;
   background-color: white;
   border-bottom: 1px solid #e0e0e0;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
-  gap: 20px; /* NEW: controls spacing between left, center, right */
 }
 
 .nav-left {
@@ -142,7 +144,7 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  transition: 1s;
+  transition: 2s;
 }
 
 .hero.sticky {
@@ -166,18 +168,24 @@ body {
   z-index: 1;
   text-align: center;
   color: #3E87FB;
-  padding-top: 30vh;
-  font-family: sora, sora, sans-serif;
+  padding-bottom: 20vh;
+  font-family: sora, sans-serif;
   font-size: 40px;
   font-weight: 100;
   letter-spacing: 0.2em;
+}
+
+
+.hero-content span {
+  background-color: transparent;
 }
 
 /* Features Section */
 .card-showcase {
   background-color: #121212;
   color: white;
-  padding: 100px 40px;
+  margin-top: 30vh;
+  padding: 100px;
 }
 
 .heading h1 {
