@@ -140,41 +140,29 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 999;
   overflow: hidden;
-  transition: 2s;
+  transition: height 0.1s linear;
 }
 
-.hero.sticky {
-  height: 76px;
-}
-
-/* Fullscreen video background */
 .hero-video {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: 1s;
+  z-index: 1;
 }
 
-/* Overlay content */
 .hero-content {
   position: relative;
-  z-index: 1;
-  text-align: center;
-  color: #3E87FB;
-  padding-bottom: 20vh;
-  font-family: sora, sans-serif;
-  font-size: 40px;
-  font-weight: 100;
-  letter-spacing: 0.2em;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+  font-size: 2rem;
 }
-
 
 .hero-content span {
   background-color: transparent;
