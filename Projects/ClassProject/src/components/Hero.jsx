@@ -1,27 +1,32 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from 'react';
 
-function Hero() {
-  const heroRef = useRef(null);
-
+function Hero({ forwardedRef }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const maxScroll = 300;
-
+      const maxScroll = 300; // Max scroll at which hero is 76px
       const clamped = Math.min(scrollY, maxScroll);
-      const targetHeight = 100 - (clamped / maxScroll) * (100 - 10);
 
-      if (heroRef.current) {
-        heroRef.current.style.height = `${targetHeight}vh`;
+      // Convert vh to px for calculation
+      const viewportHeight = window.innerHeight;
+      const startHeight = viewportHeight; // 100vh
+      const endHeight = 76; // target height in px
+
+      const targetHeight =
+        startHeight - ((startHeight - endHeight) * clamped) / maxScroll;
+
+      if (forwardedRef.current) {
+        forwardedRef.current.style.height = `${targetHeight}px`;
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [forwardedRef]);
+
 
   return (
-    <section className="hero" ref={heroRef}>
+    <section className="hero" ref={forwardedRef}>
       <video className="hero-video" autoPlay muted loop playsInline>
         <source src="/assets/hero-bg.mp4" type="video/mp4" />
       </video>

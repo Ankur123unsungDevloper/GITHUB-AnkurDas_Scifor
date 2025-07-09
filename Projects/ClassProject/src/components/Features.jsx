@@ -1,16 +1,26 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
 function CardShowcase() {
   const sectionRef = useRef(null);
-  const [inView, setInView] = useState(false);
+  const cardsRef = useRef([]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
-      { threshold: 0.4 }
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          cardsRef.current.forEach((card, index) => {
+            setTimeout(() => {
+              if (card) card.classList.add('show');
+            }, index * 100); // stagger animation
+          });
+        }
+      },
+      { threshold: 0.3 }
     );
+
     if (sectionRef.current) observer.observe(sectionRef.current);
+
     return () => observer.disconnect();
   }, []);
 
@@ -19,8 +29,8 @@ function CardShowcase() {
       <div className="heading">
         <h1>Build Stronger Customer Relationships</h1>
         <h2>
-          Simplify Interactions & Gain Valuable Insights with <br />
-          Keenect Customer Relations Management Software
+          Simplify Interactions & Gain Valuable <br />
+          Insights with Keenect Customer Relations Management Software
         </h2>
 
         <button className="cta-btn">
@@ -28,7 +38,15 @@ function CardShowcase() {
         </button>
       </div>
 
-      
+      <div className="card-container">
+        {Array.from({ length: 15 }).map((_, index) => (
+          <div
+            key={index}
+            className={`card ${[3, 5, 6, 10].includes(index) ? 'rotate-card' : ''}`}
+            ref={(el) => (cardsRef.current[index] = el)}
+          />
+        ))}
+      </div>
     </section>
   );
 }
