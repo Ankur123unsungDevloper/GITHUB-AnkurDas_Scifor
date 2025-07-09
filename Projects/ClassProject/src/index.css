@@ -177,18 +177,20 @@ body {
   transition: position 0.3s ease;
 }
 
+/* Fixed until Hero is scrolled */
 .card-showcase.fixed {
   position: fixed;
-  top: 185px;
+  top: 185px; /* You wanted this */
   left: 0;
   right: 0;
-  height: calc(100vh - 76px);
+  height: calc(100vh - 185px); /* Optional but helps with overflow */
   overflow: hidden;
 }
 
+/* When scrolling normally */
 .card-showcase.relative {
   position: relative;
-  margin-top: calc(100vh - 76px);
+  margin-top: 185px; /* This is key! Matches the .fixed top */
 }
 
 .heading h1 {

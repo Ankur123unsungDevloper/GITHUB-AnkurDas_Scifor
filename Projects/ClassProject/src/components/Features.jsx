@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-function Features({ forwardedRef, isFixed, slideAmount }) {
+function Features({ isFixed, slideAmount }) {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
@@ -27,6 +27,10 @@ function Features({ forwardedRef, isFixed, slideAmount }) {
     <section
       className={`card-showcase ${isFixed ? 'fixed' : 'relative'}`}
       ref={sectionRef}
+      style={{
+        marginTop: isFixed ? '0px' : 'calc(100vh - 76px)',
+        transition: 'margin-top 0.4s ease-in-out, transform 0.4s ease-in-out',
+      }}
     >
       <div className="heading">
         <h1>Build Stronger Customer Relationships</h1>
@@ -34,7 +38,6 @@ function Features({ forwardedRef, isFixed, slideAmount }) {
           Simplify Interactions & Gain Valuable <br />
           Insights with Keenect Customer Relations Management Software
         </h2>
-
         <button className="cta-btn">
           TRY IT OUT NOW <FaArrowRight className="arrow-icon" />
         </button>
@@ -42,7 +45,6 @@ function Features({ forwardedRef, isFixed, slideAmount }) {
 
       <div
         className="card-container"
-        ref={forwardedRef}
         style={{
           transform: `translateX(-${slideAmount}px)`,
           transition: 'transform 0.3s ease',
