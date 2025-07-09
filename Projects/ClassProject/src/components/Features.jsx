@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-function CardShowcase() {
+function Features({ forwardedRef, isFixed, slideAmount }) {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
 
@@ -12,7 +12,7 @@ function CardShowcase() {
           cardsRef.current.forEach((card, index) => {
             setTimeout(() => {
               if (card) card.classList.add('show');
-            }, index * 100); // stagger animation
+            }, index * 100);
           });
         }
       },
@@ -20,12 +20,14 @@ function CardShowcase() {
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="card-showcase" ref={sectionRef}>
+    <section
+      className={`card-showcase ${isFixed ? 'fixed' : 'relative'}`}
+      ref={sectionRef}
+    >
       <div className="heading">
         <h1>Build Stronger Customer Relationships</h1>
         <h2>
@@ -38,7 +40,14 @@ function CardShowcase() {
         </button>
       </div>
 
-      <div className="card-container">
+      <div
+        className="card-container"
+        ref={forwardedRef}
+        style={{
+          transform: `translateX(-${slideAmount}px)`,
+          transition: 'transform 0.3s ease',
+        }}
+      >
         {Array.from({ length: 15 }).map((_, index) => (
           <div
             key={index}
@@ -51,4 +60,4 @@ function CardShowcase() {
   );
 }
 
-export default CardShowcase;
+export default Features;
