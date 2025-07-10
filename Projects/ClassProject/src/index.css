@@ -180,17 +180,16 @@ body {
 /* Fixed until Hero is scrolled */
 .card-showcase.fixed {
   position: fixed;
-  top: 185px; /* You wanted this */
+  top: 185px;
   left: 0;
   right: 0;
-  height: calc(100vh - 185px); /* Optional but helps with overflow */
+  height: calc(100vh - 185px);
   overflow: hidden;
 }
 
 /* When scrolling normally */
 .card-showcase.relative {
   position: relative;
-  margin-top: 185px; /* This is key! Matches the .fixed top */
 }
 
 .heading h1 {
@@ -230,28 +229,31 @@ body {
 .card-container {
   display: flex;
   flex-wrap: nowrap;
-  overflow-x: auto;
   gap: 20px;
-  padding: 50px 20px;
-  justify-content: center;
-  scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
+  padding: 50px 0;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-slider {
+  display: flex;
+  gap: 20px;
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+.card {
+  flex: 0 0 120px;
+  height: 220px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  transition: transform 1s ease, border-color 0.4s ease;
 }
 
 /* Hide scrollbar for WebKit (Chrome, Safari) */
 .card-container::-webkit-scrollbar {
   display: none;
-}
-
-/* Card styling */
-.card {
-  flex: 0 0 120px;
-  height: 220px;
-  background-color: #1c1c1c;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  transform: translateX(0);
-  transition: transform 1s ease, border-color 0.4s ease;
 }
 
 /* On scroll-in: slide left */

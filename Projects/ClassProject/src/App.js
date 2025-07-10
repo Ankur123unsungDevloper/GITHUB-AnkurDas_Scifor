@@ -16,7 +16,7 @@ function App() {
   const [isCardFixed, setIsCardFixed] = useState(true);
   const [slideAmount, setSlideAmount] = useState(0);
 
-  const maxSlide = 400; // Adjust as needed
+  const maxSlide = 400; // max pixels to slide
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,21 +26,30 @@ function App() {
       if (!hero) return;
 
       const heroHeight = hero.getBoundingClientRect().height;
-      const heightVH = (heroHeight / vh) * 100;
 
-      // Slide cards when hero shrinks between 100vh and 53.92vh
-      if (heightVH <= 100 && heightVH >= 53.92) {
-        const progress = (100 - heightVH) / (100 - 53.92);
+      // ✅ Slide starts after hero height is <= 375.413px
+      const slideStart = 375.413;
+      const slideEnd = 76; // when hero fully shrinks
+
+      if (heroHeight <= slideStart && heroHeight >= slideEnd) {
+        const progress = (slideStart - heroHeight) / (slideStart - slideEnd);
         setSlideAmount(progress * maxSlide);
+      } else if (heroHeight < slideEnd) {
+        // After fully shrunk, keep it at max
+        setSlideAmount(maxSlide);
+      } else {
+        // Before slideStart, no movement
+        setSlideAmount(0);
       }
 
-      // Lock card showcase in fixed mode until Hero shrinks to 76px
-      setIsCardFixed(heroHeight > 76);
+      // Fixed positioning control (if needed)
+      setIsCardFixed(heroHeight > slideEnd);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   return (
     <>
