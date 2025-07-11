@@ -24,39 +24,32 @@ function Features({ isFixed, slideAmount }) {
   }, []);
 
   return (
-    <section
-      className={`card-showcase ${isFixed ? 'fixed' : 'relative'}`}
-      ref={sectionRef}
-      style={{
-        marginTop: isFixed ? '0px' : 'calc(100vh - 76px)',
-        transition: 'margin-top 0.4s ease-in-out, transform 0.4s ease-in-out',
-      }}
-    >
-      <div className="heading">
-        <h1>Build Stronger Customer Relationships</h1>
-        <h2>
-          Simplify Interactions & Gain Valuable <br />
-          Insights with Keenect Customer Relations Management Software
-        </h2>
-        <button className="cta-btn">
-          TRY IT OUT NOW <FaArrowRight className="arrow-icon" />
-        </button>
-      </div>
+    <section className="feature-section">
+      <div className={`slide-card ${isFixed ? 'fixed' : 'relative'}`}>
+        {/* Heading + Cards */}
+        <div className="card-content">
+          <div className="heading">
+            <h1>Build Stronger Customer Relationships</h1>
+            <h2>
+              Simplify Interactions & Gain Insights <br />
+              with Keenect CRM
+            </h2>
+          </div>
 
-      <div
-        className="card-container"
-        style={{
-          transform: `translateX(-${slideAmount}px)`,
-          transition: 'transform 0.3s ease',
-        }}
-      >
-        {Array.from({ length: 15 }).map((_, index) => (
-          <div
-            key={index}
-            className={`card ${[3, 5, 6, 10].includes(index) ? 'rotate-card' : ''}`}
-            ref={(el) => (cardsRef.current[index] = el)}
-          />
-        ))}
+          <div className="card-container">
+            <div
+              className="card-slider"
+              style={{ transform: `translateX(-${slideAmount}px)` }}
+            >
+              {Array.from({ length: 15 }).map((_, index) => (
+                <div key={index} className="card" />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* For future card effects */}
+        <div className="future-card-effect" />
       </div>
     </section>
   );

@@ -169,16 +169,16 @@ body {
 }
 
 /* Features Section */
-.card-showcase {
+/* Main section wrapper */
+.feature-section {
   background: #121212;
   color: white;
   width: 100%;
   z-index: 1;
-  transition: position 0.3s ease;
 }
 
-/* Fixed until Hero is scrolled */
-.card-showcase.fixed {
+/* Only the .slide-card gets fixed */
+.slide-card.fixed {
   position: fixed;
   top: 185px;
   left: 0;
@@ -187,11 +187,12 @@ body {
   overflow: hidden;
 }
 
-/* When scrolling normally */
-.card-showcase.relative {
+.slide-card.relative {
   position: relative;
+  margin-top: calc(100vh - 185px); /* push down after fixed */
 }
 
+/* Heading styles */
 .heading h1 {
   font-size: clamp(3rem, 7vw, 4.8rem);
   font-weight: 500;
@@ -206,6 +207,7 @@ body {
   line-height: 1;
 }
 
+/* Call-to-action button */
 .cta-btn {
   background: transparent;
   border: 1px solid white;
@@ -226,6 +228,7 @@ body {
   color: black;
 }
 
+/* Cards section */
 .card-container {
   display: flex;
   flex-wrap: nowrap;
@@ -236,6 +239,7 @@ body {
   position: relative;
 }
 
+/* Slider that will translate on scroll */
 .card-slider {
   display: flex;
   gap: 20px;
@@ -243,6 +247,7 @@ body {
   transition: transform 0.3s ease-out;
 }
 
+/* Individual cards */
 .card {
   flex: 0 0 120px;
   height: 220px;
@@ -251,20 +256,20 @@ body {
   transition: transform 1s ease, border-color 0.4s ease;
 }
 
-/* Hide scrollbar for WebKit (Chrome, Safari) */
-.card-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* On scroll-in: slide left */
+/* Optional card effects */
 .card.show {
   transform: translateX(-30px);
 }
 
-/* Blue border cards with 360deg spin */
 .card.show.rotate-card {
   border-color: #3f84f9;
   transform: translateX(-30px) rotateY(360deg);
+}
+
+/* Optional future effects section */
+.future-card-effect {
+  height: 200px;
+  background: transparent; /* Or add animation later */
 }
 
 /* About Section */
