@@ -4,38 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Button Show/hide text</title>
-
-  <style>
-    #text {
-      display: none; /* Initially hide the text */
-      margin-top: 10px;
-      font-size: 18px;
-      color: #333;
-    }
-    button {
-      padding: 10px 15px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <button onclick="toggleText()">Show Text</button>
-  <p id="text">This is the text that will be shown or hidden.</p>
+  <p id="myText">This is the text that will be shown or hidden.</p>
 
-  <script>
-    function toggleText() {
-      const text = document.getElementById("text");
-      const button = document.querySelector("button");
-
-      if (text.style.display === "none") {
-        text.style.display = "block";
-        button.textContent = "Hide Text";
-      } else {
-        text.style.display = "none";
-        button.textContent = "Show Text";
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
